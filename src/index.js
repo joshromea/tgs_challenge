@@ -1,17 +1,38 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from 'react'
+import ReactDOM from 'react-dom'
+
+import thunk from 'redux-thunk'
+import { Provider } from 'react-redux'
+import { applyMiddleware, compose, combineReducers, createStore } from 'redux'
+import Routes from './routes'
+
+import likedGifsReducer from './reducers/likedGifsReducer'
+import weirdnessReducer from './reducers/weirdnessReducer'
+import searchTermReducer from './reducers/searchTermReducer'
+import searchResReducer from './reducers/searchResReducer'
+
+import './index.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
+
+const allReducers = combineReducers({
+  likedGifs: likedGifsReducer,
+  weirdness: weirdnessReducer,
+  searchTerm: searchTermReducer,
+  searchResult: searchResReducer
+})
+
+const allStoreEnhancers = compose(
+  applyMiddleware(thunk)
+)
+
+const store = createStore(
+  allReducers,
+  allStoreEnhancers
+)
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider store={store}>
+    <Routes />
+  </Provider>,
   document.getElementById('root')
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+)

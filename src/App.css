@@ -1,38 +1,198 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 .App {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.App .column {
+  flex: 1 1 500px;
+}
+
+.component {
+  padding: 20px 30px 30px 30px;
+}
+
+.component-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+label {
+  color: #777;
+}
+
+input {
+  height: 25px;
+}
+
+p {
+  line-height: 1.5em;
+}
+
+header {
+  text-align: left;
+  background-color: #efefef;
+  padding: 25px 30px 25px 30px;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+
+.Search label {
+  display: block;
+}
+
+.Search button {
+  background-color: #999;
+  color: #fff;
+}
+
+.SearchResult {
+  background-color: #fafafa;
+  border: 1px solid #eee;
+}
+
+.SearchResult input {
+  display: block;
+}
+
+.SearchResult__image {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.SearchResult__image h5 {
+  text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.SearchResult__image img {
+  text-align: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.SearchResult__image__wrapper {
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+  border: 1px solid #eee;
+  font-style: italic;
+  text-align: center;
+}
+
+.SearchResult__image__wrapper p {
+  padding: 0px 10px 0px 10px;
+}
+
+.SearchResult__image__wrapper .Gif {
+  padding: 0px;
+}
+
+.SearchResult__image__wrapper p {
+  margin-top: 100px;
+}
+
+.SearchResult__likeGif {
+  width: 100px;
+  margin: 20px auto;
+}
+
+.SearchResult__weirdness input {
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.spinner {
+  margin: 0 auto;
+  margin-top: 100px;
+}
+
+
+.GifList ul {
+  list-style-type: none;
+  padding: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
 }
 
-.App-link {
-  color: #61dafb;
+.GifList li {
+  margin: 20px;
+  flex: 0 1 250px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.GifList li h5 {
+  text-align: center;
+  overflow: hidden;
+}
+
+.GifList__weirdness {
+  text-align: center;
+}
+
+
+.LikedGifs {
+  height: 100%;
+  background-color: #fafafa;
+  border: 1px solid #eee;
+}
+
+.LikedGifs p {
+  text-align: center;
+  padding: 15px;
+}
+
+.LikedGifs__weirdness-button {
+  text-align: center;
+}
+
+
+.Gif {
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  left: 88%;
+  top: 3% !important;
+  background-color: #222 !important;
+  padding: 0px !important;
+
+  font-size: 12px !important;
+  font-weight: bold !important;
+  line-height: 0px !important;
+  color: #fff !important;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 50px;
+  height: 20px;
+  width: 20px;
+}
+
+.close span {
+  background: transparent;
+  position: absolute;
+  top: 45%;
+  left: 28%;
+}
+
+.ResultPage h4 {
+  text-align: center;
+}
+
+.ResultPage__start-over {
+  text-align: center;
+}
+
+.ResultPage button {
+  background-color: #999;
+  color: #fff;
 }
