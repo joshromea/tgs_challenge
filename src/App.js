@@ -23,23 +23,23 @@ class App extends React.Component {
       loadingIndicatorRunning: false
     };
 
-    this.onUpdateWeirdness = this.onUpdateWeirdness.bind(this);
-    this.onLikeGif = this.onLikeGif.bind(this);
-    this.onUnlikeGif = this.onUnlikeGif.bind(this);
-    this.handleSearchTermChange = this.handleSearchTermChange.bind(this);
-    this.handleSearchTermSubmit = this.handleSearchTermSubmit.bind(this);
+    this.onUpdateWeirdness = this.onUpdateWeirdness.bind(this)
+    this.onLikeGif = this.onLikeGif.bind(this)
+    this.onUnlikeGif = this.onUnlikeGif.bind(this)
+    this.handleSearchTermChange = this.handleSearchTermChange.bind(this)
+    this.handleSearchTermSubmit = this.handleSearchTermSubmit.bind(this)
 
-    this.searchInput = React.createRef();
-    this.searchButton = React.createRef();
-    this.likeGifButton = React.createRef();
-    this.calculateWeirdnessButton = React.createRef();
+    this.searchInput = React.createRef()
+    this.searchButton = React.createRef()
+    this.likeGifButton = React.createRef()
+    this.calculateWeirdnessButton = React.createRef()
   }
 
   handleSearchTermChange(e) {
     this.setState({
       searchTerm: e.target.value,
       toolTipOpen: false
-    });
+    })
   }
 
   handleSearchTermSubmit(e) {
@@ -51,8 +51,8 @@ class App extends React.Component {
     this.props.onApiRequest(() => {
       this.setState({
         loadingIndicatorRunning: false
-      });
-    });
+      })
+    })
     this.likeGifButton.current.removeAttribute("disabled");
   }
 
@@ -68,7 +68,7 @@ class App extends React.Component {
     this.searchInput.current.value = "";
     this.setState({
       toolTipOpen: this.props.likedGifs.length + 1 !== 5
-    });
+    })
     if (this.props.likedGifs.length + 1 === 5) {
       this.searchButton.current.setAttribute("disabled", "disabled");
       this.calculateWeirdnessButton.current.removeAttribute("disabled");
@@ -118,9 +118,9 @@ const mapStateToProps = (state, props) => {
     weirdness: state.weirdness,
     searchTerm: state.searchTerm,
     searchResult: state.searchResult
-  };
+  }
 
-};
+}
 
 const mapActionsToProps = {
   onUpdateWeirdness: updateWeirdness,
@@ -129,6 +129,6 @@ const mapActionsToProps = {
   onLikeGif: likeGif,
   onUnlikeGif: unlikeGif,
   onClearSearchResult: clearSearchRes
-};
+}
 
 export default connect(mapStateToProps, mapActionsToProps)(App)

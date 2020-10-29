@@ -5,7 +5,7 @@ import App from './App'
 import ResultPage from './components/ResultsPage'
 // import { ResultPage } from './components/ResultPage'
 
-const AppRouter = (props) => (
+const AppRouter = () => (
     <Router>
         <Route exact path='/' component={App} />
         <Route exact path='/result' component={ResultPage} />

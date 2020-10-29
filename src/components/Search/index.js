@@ -2,7 +2,7 @@ import React from 'react'
 
 import Tooltip from 'react-bootstrap/Tooltip'
 
-const Search = (props) => {
+const Search = props => {
     return (
         <section className="Search component">
             <div>

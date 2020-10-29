@@ -2,7 +2,7 @@ import React from 'react'
 
 import Gif from '../Gif'
 
-const GifList = (props) => {
+const GifList = props => {
     const gifs = () => {
         return props.gifs.map(gif => {
             return (
